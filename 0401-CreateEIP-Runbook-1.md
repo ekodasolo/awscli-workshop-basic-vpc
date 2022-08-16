@@ -1,4 +1,4 @@
-# VPCを作成する
+# NAT Gatewayを作成する
 
 ## About
 VPCを作成するCLI手順書。

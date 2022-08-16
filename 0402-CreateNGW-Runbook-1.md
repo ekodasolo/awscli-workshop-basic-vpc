@@ -1,9 +1,9 @@
-# VPCを作成する
+# NAT Gatewayを作成する
 
 ## About
 VPCを作成するCLI手順書。
 
-本手順では、VPCを東京リージョンに作成する
+本手順では、NAT Gatewayを作成する。
 
 
 ## When: 作業の条件

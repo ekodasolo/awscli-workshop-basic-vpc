@@ -19,14 +19,17 @@
 
 ## Who: 作業者の前提
 
-1. AWS CLIでS3の操作ができること
-1. VPCへのアクセス権があること
+1. Unixシェルの基本操作ができること
+1. TCP/IPの基本的な内容を理解しアドレス割り当てやIPルーティングが設定できること
+1. AWS CLIの基本操作ができること
+1. EC2/VPCへのアクセス権があること
 
 
 ## Where: 作業環境の条件
 
-- 会社の環境からAWS CloudShellに接続し、CloudShell上で作業することを前提とする
-- 作業時のIAM Roleはsysadmin-roleを使用していること
+- CloudShellに接続し、CloudShell上で作業することを前提とする
+- 必要な権限をもったIAM User/Iam RoleでCloudShellを立ち上げる
+
 
 ### VPCの基本仕様
 
@@ -37,7 +40,7 @@
 
 ## 詳細手順
 
-1. [VCPを作成する](./hubtraining-0101-CreateVPC-Runbook.md)
+1. [IGWを作成する](./0301-CreateIGW-Runbook.md)
 
 
 # EOD

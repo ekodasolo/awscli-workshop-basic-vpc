@@ -14,24 +14,27 @@
 
 |  Name                              |  用途                         | 備考                            |
 | ---------------------------------- | ----------------------------- | ------------------------------- |
-| hubtraining-dev-priv1-vpc          | Private Subnet AZ1            | AZ1のプライベートサブネット       |
-| hubtraining-dev-priv2-vpc          | Private Subnet AZ2            | AZ2のプライベートサブネット       |
-| hubtraining-dev-pub1-vpc           | Public Subnet AZ1             | AZ1のパブリックサブネット         |
-| hubtraining-dev-pub2-vpc           | Public Subnet AZ2             | AZ2のパブリックサブネット         |
-| hubtraining-dev-tran1-vpc          | Transit Subnet AZ1            | AZ1のトランジットサブネット       |
-| hubtraining-dev-tran2-vpc          | Transit Subnet AZ2            | AZ2のトランジットサブネット       |
+| project-dev-priv1-vpc              | Private Subnet AZ1            | AZ1のプライベートサブネット       |
+| project-dev-priv2-vpc              | Private Subnet AZ2            | AZ2のプライベートサブネット       |
+| project-dev-pub1-vpc               | Public Subnet AZ1             | AZ1のパブリックサブネット         |
+| project-dev-pub2-vpc               | Public Subnet AZ2             | AZ2のパブリックサブネット         |
+| project-dev-tran1-vpc              | Transit Subnet AZ1            | AZ1のトランジットサブネット       |
+| project-dev-tran2-vpc              | Transit Subnet AZ2            | AZ2のトランジットサブネット       |
 
 
 ## Who: 作業者の前提
 
-1. AWS CLIでS3の操作ができること
-1. VPCへのアクセス権があること
+1. Unixシェルの基本操作ができること
+1. TCP/IPの基本的な内容を理解しアドレス割り当てやIPルーティングが設定できること
+1. AWS CLIの基本操作ができること
+1. EC2/VPCへのアクセス権があること
 
 
 ## Where: 作業環境の条件
 
-- 会社の環境からAWS CloudShellに接続し、CloudShell上で作業することを前提とする
-- 作業時のIAM Roleはsysadmin-roleを使用していること
+- CloudShellに接続し、CloudShell上で作業することを前提とする
+- 必要な権限をもったIAM User/Iam RoleでCloudShellを立ち上げる
+
 
 ### Subnetの基本仕様
 
@@ -41,7 +44,12 @@
 
 ## 詳細手順
 
-1. [VCPを作成する](./hubtraining-0101-CreateVPC-Runbook.md)
+1. [Subnetを作成する-1 Private Subnet](./2101-CreateSubnet-Runbook-1.md)
+1. [Subnetを作成する-2 Private Subnet](./2101-CreateSubnet-Runbook-2.md)
+1. [Subnetを作成する-3 Public Subnet](./2101-CreateSubnet-Runbook-3.md)
+1. [Subnetを作成する-4 Public Subnet](./2101-CreateSubnet-Runbook-4.md)
+1. [Subnetを作成する-5 Transit Subnet](./2101-CreateSubnet-Runbook-5.md)
+1. [Subnetを作成する-6 Transit Subnet](./2101-CreateSubnet-Runbook-6.md)
 
 
 # EOD
