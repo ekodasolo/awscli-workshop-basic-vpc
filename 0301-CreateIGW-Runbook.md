@@ -315,6 +315,6 @@ aws ec2 describe-internet-gateways \
 
 #### Navigation
 
-Next: [を作成する](./0000-CreateWhat-Runbook-1.md)
+Next: [NGWを作成する](./0400-CreateNGW-Scenario.md)
 
 # EOD

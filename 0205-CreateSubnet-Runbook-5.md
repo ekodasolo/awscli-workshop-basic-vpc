@@ -256,6 +256,6 @@ aws ec2 describe-subnets \
 
 #### Navigation
 
-Next: [Subnetを作成する-6 Transit Subnet](./206-CreateSubnet-Runbook-6.md)
+Next: [Subnetを作成する-6 Transit Subnet](./0206-CreateSubnet-Runbook-6.md)
 
 # EOD

@@ -256,6 +256,6 @@ aws ec2 describe-subnets \
 
 #### Navigation
 
-Next: [Subnetを作成する-4 Public Subnet](./204-CreateSubnet-Runbook-4.md)
+Next: [Subnetを作成する-4 Public Subnet](./0204-CreateSubnet-Runbook-4.md)
 
 # EOD
