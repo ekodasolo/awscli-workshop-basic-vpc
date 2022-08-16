@@ -1,4 +1,4 @@
-# NAT Gatewayを作成する
+# [0401] NAT Gateway用EIPを作成する
 
 ## About
 VPCを作成するCLI手順書。

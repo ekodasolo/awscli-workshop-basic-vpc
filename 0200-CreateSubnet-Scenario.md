@@ -44,12 +44,12 @@
 
 ## 詳細手順
 
-1. [Subnetを作成する-1 Private Subnet](./2101-CreateSubnet-Runbook-1.md)
-1. [Subnetを作成する-2 Private Subnet](./2101-CreateSubnet-Runbook-2.md)
-1. [Subnetを作成する-3 Public Subnet](./2101-CreateSubnet-Runbook-3.md)
-1. [Subnetを作成する-4 Public Subnet](./2101-CreateSubnet-Runbook-4.md)
-1. [Subnetを作成する-5 Transit Subnet](./2101-CreateSubnet-Runbook-5.md)
-1. [Subnetを作成する-6 Transit Subnet](./2101-CreateSubnet-Runbook-6.md)
+1. [Subnetを作成する-1 Private Subnet](./201-CreateSubnet-Runbook-1.md)
+1. [Subnetを作成する-2 Private Subnet](./201-CreateSubnet-Runbook-2.md)
+1. [Subnetを作成する-3 Public Subnet](./201-CreateSubnet-Runbook-3.md)
+1. [Subnetを作成する-4 Public Subnet](./201-CreateSubnet-Runbook-4.md)
+1. [Subnetを作成する-5 Transit Subnet](./201-CreateSubnet-Runbook-5.md)
+1. [Subnetを作成する-6 Transit Subnet](./201-CreateSubnet-Runbook-6.md)
 
 
 # EOD

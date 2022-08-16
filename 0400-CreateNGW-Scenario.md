@@ -1,4 +1,4 @@
-# Training用VPCの作成
+# NAT Gatewayの作成
 
 ## About
 トレーニングに利用するVPCを作成するCLI手順シナリオ。
@@ -48,8 +48,8 @@
 
 ## 詳細手順
 
-1. [NGW用のElasticIPを作成する](./0401-CreateEIP-Runbook.md)
-1. [NGWを作成する](./0402-CreateNGW-Runbook.md)
+1. [NGW用のElasticIPを作成する](./0401-CreateEIP-Runbook-1.md)
+1. [NGWを作成する](./0402-CreateNGW-Runbook-1.md)
 
 
 # EOD

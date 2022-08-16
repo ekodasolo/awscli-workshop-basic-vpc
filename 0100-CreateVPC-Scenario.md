@@ -40,8 +40,8 @@
 
 ## 詳細手順
 
-1. [VCPを作成する](./101-CreateVPC-Runbook.md)
-1. [VCP属性を設定する](./102-ModifyDNSHostname-Runbook.md)
+1. [VCPを作成する](./0101-CreateVPC-Runbook.md)
+1. [VCP属性を設定する](./0102-ModifyDNSHostname-Runbook.md)
 
 
 # EOD
