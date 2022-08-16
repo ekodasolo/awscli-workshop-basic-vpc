@@ -17,7 +17,7 @@ AWS CLI(Command Line Interface)で基本的なVPCを構築するハンズオン�
 
 ## 手順シナリオ
 
-1. [VCPを作成する](./0100-CreateVPC-Scenario.md)
+1. [VPCを作成する](./0100-CreateVPC-Scenario.md)
 1. [Subnetを作成する](./0200-CreateSubnet-Scenario.md)
 1. [Internet Gatewayを作成する](./0300-CreateIGW-Scenario.md)
 1. [NAT Gatewayを作成する](./0400-CreateNGW-Scenario.md)
