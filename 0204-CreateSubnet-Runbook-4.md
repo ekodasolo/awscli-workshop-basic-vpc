@@ -254,4 +254,8 @@ aws ec2 describe-subnets \
 
 今回は特になし
 
+#### Navigation
+
+Next: [Subnetを作成する-5 Transit Subnet](./205-CreateSubnet-Runbook-5.md)
+
 # EOD

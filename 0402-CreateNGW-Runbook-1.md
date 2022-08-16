@@ -345,4 +345,8 @@ aws ec2 describe-nat-gateways \
 
 今回は特になし
 
+#### Navigation
+
+Next: [RouteTableを作成する](./0500-CreateRouteTable-Scenario.md)
+
 # EOD

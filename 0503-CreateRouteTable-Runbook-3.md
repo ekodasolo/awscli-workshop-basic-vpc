@@ -213,4 +213,8 @@ aws ec2 describe-route-tables \
 
 今回は特になし
 
+#### Navigation
+
+Next: [Routeを作成する-Private](./0504-CreateRoute-Runbook-1.md)
+
 # EOD

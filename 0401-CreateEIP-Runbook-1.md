@@ -202,4 +202,8 @@ aws ec2 describe-addresses \
 
 今回は特になし
 
+#### Navigation
+
+Next: 1. [NGWを作成する](./0402-CreateNGW-Runbook-1.md)
+
 # EOD

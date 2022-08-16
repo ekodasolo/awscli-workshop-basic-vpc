@@ -193,4 +193,9 @@ aws ec2 describe-vpcs \
 
 今回は特になし
 
+
+#### Navigation
+
+Next: [VCP属性を設定する](./0102-ModifyDNSHostname-Runbook.md)
+
 # EOD

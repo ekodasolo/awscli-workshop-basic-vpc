@@ -254,4 +254,8 @@ aws ec2 describe-subnets \
 
 今回は特になし
 
+#### Navigation
+
+Next: [Subnetを作成する-2 Private Subnet](./202-CreateSubnet-Runbook-2.md)
+
 # EOD

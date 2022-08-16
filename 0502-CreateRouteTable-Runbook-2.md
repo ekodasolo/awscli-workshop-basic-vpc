@@ -213,4 +213,8 @@ aws ec2 describe-route-tables \
 
 今回は特になし
 
+#### Navigation
+
+Next: [Route Tableを作成する-Transit](./0503-CreateRouteTable-Runbook-3.md)
+
 # EOD

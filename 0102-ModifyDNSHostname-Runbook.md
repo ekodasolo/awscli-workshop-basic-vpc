@@ -202,4 +202,9 @@ aws ec2 describe-vpc-attribute \
 
 今回は特になし
 
+#### Navigation
+
+Next: [Subnetを作成する](./0200-CreateSubnet-Scenario.md)
+
+
 # EOD

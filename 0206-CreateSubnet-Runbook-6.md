@@ -254,4 +254,8 @@ aws ec2 describe-subnets \
 
 今回は特になし
 
+#### Navigation
+
+Next: [Internet Gatewayを作成する](./0300-CreateIGW-Scenario.md)
+
 # EOD
