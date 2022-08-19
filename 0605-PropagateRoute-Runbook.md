@@ -1,9 +1,9 @@
-# [0603] Transit Gateway Route Table Associationの作成
+# [0605] Transit Gateway Propagationの作成
 
 ## About
 VPCを作成するCLI手順書。
 
-本手順では、Transit Gateway AttachmentをRoute Tableに関連づける。
+本手順では、Attachmentの配置されたVPCへの経路情報をRoute Tableに伝搬させる。
 
 
 ## When: 作業の条件
@@ -14,13 +14,15 @@ VPCを作成するCLI手順書。
 
 1. 対象のTransit Gateway Attachmentが存在する
 1. 対象のTransit Gateway Route Tableが存在する
+1. 対象のTransit Gateway Route Tableに対象AttachmentからのPropagationがない。
 
 
 ### After: 作業終了状況
 
 以下が完了の条件。
 
-1. 対象のTransit Gateway Route Tablにアタッチメントが関連づけられている。
+1. 対象のTransit Gateway Route TablにPropagationが設定されている。
+1. 対象のTransit Gateway Route TablにVPCへの経路が追加されている。
 
 
 ## How: 以下は作業手順
@@ -32,7 +34,7 @@ VPCを作成するCLI手順書。
 パラメータの事後確認用ファイルの設定
 
 ```bash
-RUNBOOK_TITLE="0604-associate-attachment-to-route-table"
+RUNBOOK_TITLE="0605-propagate-route"
 DIR_PARAMETER="."
 FILE_PARAMETER="${DIR_PARAMETER}/$(date +%Y-%m-%d)-${RUNBOOK_TITLE}.env" \
     && echo ${FILE_PARAMETER}
@@ -160,16 +162,34 @@ VPC_TGW_RTBL_ID=$(aws ec2 describe-transit-gateway-route-tables \
 tgw-rtb-0aabce3c4f06f4810
 ```
 
+#### 1.4 事前条件3の確認
+
+対象のTransit Gateway Route Tableに対象AttachmentからのPropagationがない。
+
+```bash
+aws ec2 get-transit-gateway-route-table-propagations \
+    --transit-gateway-route-table-id ${VPC_TGW_RTBL_ID} \
+    --filters "Name=transit-gateway-attachment-id,Values=${VPC_TGW_ATT_ID}" \
+    --region ${AWS_REGION}
+```
+
+結果の例
+```output
+{
+    "TransitGatewayRouteTablePropagations": []
+}
+```
+
 
 ### 2. 主処理
 
-#### 2.1 リソースの操作 (ASSOCIATE)
+#### 2.1 リソースの操作 (ENABLE)
 
 パラメータの最終確認
 
 ```bash
 cat << EOF > ${FILE_PARAMETER}
-aws ec2 associate-transit-gateway-route-table \
+aws ec2 enable-transit-gateway-route-table-propagation \
     --transit-gateway-route-table-id ${VPC_TGW_RTBL_ID} \
     --transit-gateway-attachment-id ${VPC_TGW_ATT_ID} \
     --region ${AWS_REGION}
@@ -181,7 +201,7 @@ cat ${FILE_PARAMETER}
 処理の実行
 
 ```bash
-aws ec2 associate-transit-gateway-route-table \
+aws ec2 enable-transit-gateway-route-table-propagation \
     --transit-gateway-route-table-id ${VPC_TGW_RTBL_ID} \
     --transit-gateway-attachment-id ${VPC_TGW_ATT_ID} \
     --region ${AWS_REGION}
@@ -190,12 +210,12 @@ aws ec2 associate-transit-gateway-route-table \
 結果の例
 ```output
 {
-    "Association": {
-        "TransitGatewayRouteTableId": "tgw-rtb-04940311f2b894841",
-        "TransitGatewayAttachmentId": "tgw-attach-0b9444761b2899568",
-        "ResourceId": "vpc-0469f7ff591ec393f",
+    "Propagation": {
+        "TransitGatewayAttachmentId": "tgw-attach-00f6d6560efb30fc6",
+        "ResourceId": "vpc-0c736bdf614e0b81d",
         "ResourceType": "vpc",
-        "State": "associating"
+        "TransitGatewayRouteTableId": "tgw-rtb-0aabce3c4f06f4810",
+        "State": "enabled"
     }
 }
 ```
@@ -203,12 +223,13 @@ aws ec2 associate-transit-gateway-route-table \
 
 ### 3. 後処理
 
-#### 3.1 完了条件1、2の結果確認
+#### 3.1 完了条件1の結果確認
 
-1. 対象のTransit Gateway Route Tablにアタッチメントが関連づけられている。
+1. 対象のTransit Gateway Route TablにPropagationが設定されている。
+
 
 ```bash
-aws ec2 get-transit-gateway-route-table-associations \
+aws ec2 get-transit-gateway-route-table-propagations \
     --transit-gateway-route-table-id ${VPC_TGW_RTBL_ID} \
     --region ${AWS_REGION}
 ```
@@ -216,16 +237,50 @@ aws ec2 get-transit-gateway-route-table-associations \
 結果の例
 ```output
 {
-    "Associations": [
+    "TransitGatewayRouteTablePropagations": [
         {
             "TransitGatewayAttachmentId": "tgw-attach-00f6d6560efb30fc6",
             "ResourceId": "vpc-0c736bdf614e0b81d",
             "ResourceType": "vpc",
-            "State": "associated"
+            "State": "enabled"
         }
     ]
 }
+
 ```
+
+#### 3.2 完了条件2の結果確認
+
+2. 対象のTransit Gateway Route TablにVPCへの経路が追加されている。
+
+```bash
+aws ec2 search-transit-gateway-routes \
+    --transit-gateway-route-table-id ${VPC_TGW_RTBL_ID} \
+    --filters "Name=type,Values=propagated" \
+    --region ${AWS_REGION}
+```
+
+結果の例
+```output
+{
+    "Routes": [
+        {
+            "DestinationCidrBlock": "172.26.1.0/24",
+            "TransitGatewayAttachments": [
+                {
+                    "ResourceId": "vpc-0c736bdf614e0b81d",
+                    "TransitGatewayAttachmentId": "tgw-attach-00f6d6560efb30fc6",
+                    "ResourceType": "vpc"
+                }
+            ],
+            "Type": "propagated",
+            "State": "active"
+        }
+    ],
+    "AdditionalRoutesAvailable": false
+}
+```
+
 
 #### 3.99 中間リソースの削除
 
@@ -233,6 +288,6 @@ aws ec2 get-transit-gateway-route-table-associations \
 
 #### Navigation
 
-Next: [Propagationを設定する](./0605-PropagateRoute-Runbook)
+Next: [Next Action]()
 
 # EOD
