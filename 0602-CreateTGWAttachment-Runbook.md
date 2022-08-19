@@ -435,6 +435,6 @@ aws ec2 describe-transit-gateway-vpc-attachments \
 
 #### Navigation
 
-Next: [TGW Route Tableを作成する-Public](./0603-CreateTGWRouteTable-Runbook.md)
+Next: [TGW Route Tableを作成する](./0603-CreateTGWRouteTable-Runbook.md)
 
 # EOD

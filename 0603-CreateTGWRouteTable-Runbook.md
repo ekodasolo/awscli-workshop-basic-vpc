@@ -200,6 +200,6 @@ aws ec2 describe-transit-gateway-route-tables \
 
 #### Navigation
 
-Next: [Associationを設定する-Public](./0604-AssociateAttachment-Runbook.md)
+Next: [Associationを設定する](./0604-AssociateAttachment-Runbook.md)
 
 # EOD

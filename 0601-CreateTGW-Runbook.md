@@ -196,6 +196,6 @@ aws ec2 describe-transit-gateways \
 
 #### Navigation
 
-Next: [Attachmentを作成する-Public](./0602-CreateTGWAttachment-Runbook.md)
+Next: [Attachmentを作成する](./0602-CreateTGWAttachment-Runbook.md)
 
 # EOD
