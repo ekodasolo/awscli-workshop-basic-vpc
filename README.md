@@ -22,3 +22,4 @@ AWS CLI(Command Line Interface)で基本的なVPCを構築するハンズオン�
 1. [Internet Gatewayを作成する](./0300-CreateIGW-Scenario.md)
 1. [NAT Gatewayを作成する](./0400-CreateNGW-Scenario.md)
 1. [Route Tableを作成する](./0500-CreateRouteTable-Scenario.md)
+1. [Transit Gatewayを作成する](./0600-CreateTGW-Scenario.md)

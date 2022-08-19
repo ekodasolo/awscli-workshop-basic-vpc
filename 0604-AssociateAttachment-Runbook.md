@@ -1,4 +1,4 @@
-# [0603] Transit Gateway Route Table Associationの作成
+# [0604] Transit Gateway Route Table Associationの作成
 
 ## About
 VPCを作成するCLI手順書。
@@ -233,6 +233,6 @@ aws ec2 get-transit-gateway-route-table-associations \
 
 #### Navigation
 
-Next: [Propagationを設定する](./0605-PropagateRoute-Runbook)
+Next: [Propagationを設定する](./0605-PropagateRoute-Runbook.md)
 
 # EOD
