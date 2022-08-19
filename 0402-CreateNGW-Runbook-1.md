@@ -42,8 +42,8 @@ FILE_PARAMETER="${DIR_PARAMETER}/$(date +%Y-%m-%d)-${RUNBOOK_TITLE}.env" \
 ```bash
 # 変数に値をセット
 AWS_REGION="ap-northeast-1"
-VPC_CIDR="10.0.0.0/24"
-VPC_SUBNET_CIDR="10.0.0.0/26"
+VPC_CIDR="10.0.1.0/24"
+VPC_SUBNET_CIDR="10.0.1.0/26"
 VPC_EIP_NAME="project-dev-nat1-eip"
 VPC_NGW_NAME="project-dev-nat1-natgw"
 ```
