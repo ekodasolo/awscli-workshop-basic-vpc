@@ -51,7 +51,7 @@ VPC_TGW_RTBL_NAME="project-dev-main-tgwrtbl"
 cat << ETX
     AWS_REGION=           ${AWS_REGION}
     VPC_TGW_ATT_NAME=     ${VPC_TGW_ATT_NAME}
-    VPC_TGW_ATT_NAME=     ${VPC_TGW_RTBL_NAME}
+    VPC_TGW_RTBL_NAME=     ${VPC_TGW_RTBL_NAME}
 
 ETX
 ```
@@ -163,7 +163,7 @@ tgw-rtb-0aabce3c4f06f4810
 
 ### 2. 主処理
 
-#### 2.1 リソースの操作 (CREATE)
+#### 2.1 リソースの操作 (ASSOCIATE)
 
 パラメータの最終確認
 
