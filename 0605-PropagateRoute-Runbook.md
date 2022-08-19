@@ -231,6 +231,7 @@ aws ec2 enable-transit-gateway-route-table-propagation \
 ```bash
 aws ec2 get-transit-gateway-route-table-propagations \
     --transit-gateway-route-table-id ${VPC_TGW_RTBL_ID} \
+    --filters "Name=transit-gateway-attachment-id,Values=${VPC_TGW_ATT_ID}" \
     --region ${AWS_REGION}
 ```
 
@@ -256,7 +257,7 @@ aws ec2 get-transit-gateway-route-table-propagations \
 ```bash
 aws ec2 search-transit-gateway-routes \
     --transit-gateway-route-table-id ${VPC_TGW_RTBL_ID} \
-    --filters "Name=type,Values=propagated" \
+    --filters "Name=attachment.transit-gateway-attachment-id,Values=${VPC_TGW_ATT_ID}" \
     --region ${AWS_REGION}
 ```
 
