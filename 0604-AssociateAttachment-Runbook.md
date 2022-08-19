@@ -51,7 +51,7 @@ VPC_TGW_RTBL_NAME="project-dev-main-tgwrtbl"
 cat << ETX
     AWS_REGION=           ${AWS_REGION}
     VPC_TGW_ATT_NAME=     ${VPC_TGW_ATT_NAME}
-    VPC_TGW_ATT_NAME=     ${VPC_TGW_ATT_NAME}
+    VPC_TGW_ATT_NAME=     ${VPC_TGW_RTBL_NAME}
 
 ETX
 ```
@@ -105,7 +105,7 @@ VPC_TGW_ATT_ID=$(aws ec2 describe-transit-gateway-vpc-attachments \
     --filters "Name=tag:Name,Values=${VPC_TGW_ATT_NAME}" \
     --query "TransitGatewayVpcAttachments[].TransitGatewayAttachmentId" \
     --output text \
-    --region ${AWS_REGION}) && echo ${VPC_TGW_ID}) && echo ${VPC_TGW_ATT_ID}
+    --region ${AWS_REGION}) && echo ${VPC_TGW_ATT_ID}
 ```
 
 出力例
@@ -119,7 +119,7 @@ tgw-attach-0b9444761b2899568
 
 ```bash
 aws ec2 describe-transit-gateway-route-tables \
-    --filters "Name=tag:Name,Values=${VPC_TGW_ATT_NAME}" \
+    --filters "Name=tag:Name,Values=${VPC_TGW_RTBL_NAME}" \
     --region ${AWS_REGION}
 ```
 
@@ -149,10 +149,10 @@ Transit Gateway Route Tableが作成済みならば、Route Table IDを取得し
 
 ```bash
 VPC_TGW_RTBL_ID=$(aws ec2 describe-transit-gateway-route-tables \
-    --filters "Name=tag:Name,Values=${VPC_TGW_ATT_NAME}" \
+    --filters "Name=tag:Name,Values=${VPC_TGW_RTBL_NAME}" \
     --query "TransitGatewayRouteTables[].TransitGatewayRouteTableId" \
     --output text \
-    --region ${AWS_REGION}) && echo VPC_TGW_RTBL_ID
+    --region ${AWS_REGION}) && echo ${VPC_TGW_RTBL_ID}
 ```
 
 結果の例
@@ -189,7 +189,15 @@ aws ec2 associate-transit-gateway-route-table \
 
 結果の例
 ```output
-
+{
+    "Association": {
+        "TransitGatewayRouteTableId": "tgw-rtb-04940311f2b894841",
+        "TransitGatewayAttachmentId": "tgw-attach-0b9444761b2899568",
+        "ResourceId": "vpc-0469f7ff591ec393f",
+        "ResourceType": "vpc",
+        "State": "associating"
+    }
+}
 ```
 
 
@@ -200,8 +208,8 @@ aws ec2 associate-transit-gateway-route-table \
 1. 対象のTransit Gateway Route Tablにアタッチメントが関連づけられている。
 
 ```bash
-aws ec2 describe-transit-gateway-route-tables \
-    --filters "Name=tag:Name,Values=${VPC_TGW_ATT_NAME}" \
+aws ec2 get-transit-gateway-route-table-associations \
+    --transit-gateway-route-table-id ${VPC_TGW_RTBL_ID} \
     --region ${AWS_REGION}
 ```
 
