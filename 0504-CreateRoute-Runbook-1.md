@@ -182,7 +182,7 @@ NAT Gatewayが作成済みである。
 
 ```bash
 aws ec2 describe-nat-gateways \
-    --filter "Name=tag:Name,Values=${VPC_NGW_NAME}" \
+    --filter "Name=tag:Name,Values=${VPC_NGW_NAME}" "Name=state,Values=available" \
     --region ${AWS_REGION}
 ```
 
@@ -218,7 +218,7 @@ NAT Gatewayが作成済みならば、NAT Gateway IDを取得しておく。
 
 ```bash
 VPC_NGW_ID=$(aws ec2 describe-nat-gateways \
-    --filter "Name=tag:Name,Values=${VPC_NGW_NAME}" \
+    --filter "Name=tag:Name,Values=${VPC_NGW_NAME}" "Name=state,Values=available" \
     --query "NatGateways[].NatGatewayId" \
     --output text \
     --region ${AWS_REGION}) && echo ${VPC_NGW_ID}

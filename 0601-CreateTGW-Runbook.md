@@ -155,7 +155,7 @@ aws ec2 create-transit-gateway \
 
 ```bash
 aws ec2 describe-transit-gateways \
-    --filters "Name=options.amazon-side-asn,Values=${VPC_TGW_OPTIONS_ASN}"
+    --filters "Name=options.amazon-side-asn,Values=${VPC_TGW_OPTIONS_ASN}" "Name=state,Values=available"
 ```
 
 結果の例
