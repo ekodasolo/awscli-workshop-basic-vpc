@@ -447,6 +447,6 @@ aws ec2 describe-route-tables \
 
 #### Navigation
 
-Next: 
+Next: [Transit Gatewayの作成](./0600-CreateTGW-Scenario.md)
 
 # EOD
