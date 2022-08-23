@@ -355,7 +355,7 @@ aws ec2 create-transit-gateway-vpc-attachment \
 
 ```bash
 aws ec2 describe-transit-gateway-vpc-attachments \
-    --filters "Name=vpc-id,Values=${VPC_ID}"
+    --filters "Name=vpc-id,Values=${VPC_ID}" "Name=state,Values=available"
 ```
 
 結果の例
@@ -395,7 +395,7 @@ aws ec2 describe-transit-gateway-vpc-attachments \
 
 ```bash
 aws ec2 describe-transit-gateway-vpc-attachments \
-    --filters "Name=transit-gateway-id,Values=${VPC_TGW_ID}"
+    --filters "Name=transit-gateway-id,Values=${VPC_TGW_ID}" "Name=state,Values=available"
 ```
 
 結果の例

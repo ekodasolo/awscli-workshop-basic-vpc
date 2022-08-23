@@ -307,7 +307,7 @@ aws ec2 create-nat-gateway \
 
 ```bash
 aws ec2 describe-nat-gateways \
-    --filter "Name=subnet-id,Values=${VPC_SUBNET_ID}" \
+    --filter "Name=subnet-id,Values=${VPC_SUBNET_ID}" "Name=state,Values=available" \
     --region ${AWS_REGION}
 ```
 

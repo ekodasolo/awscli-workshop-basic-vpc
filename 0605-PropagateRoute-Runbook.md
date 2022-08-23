@@ -65,7 +65,7 @@ ETX
 
 ```bash
 aws ec2 describe-transit-gateway-vpc-attachments \
-    --filters "Name=tag:Name,Values=${VPC_TGW_ATT_NAME}" \
+    --filters "Name=tag:Name,Values=${VPC_TGW_ATT_NAME}" "Name=state,Values=available" \
     --region ${AWS_REGION}
 ```
 
@@ -104,7 +104,7 @@ Attachmentが作成済みならば、Attachment IDを取得しておく。
 
 ```bash
 VPC_TGW_ATT_ID=$(aws ec2 describe-transit-gateway-vpc-attachments \
-    --filters "Name=tag:Name,Values=${VPC_TGW_ATT_NAME}" \
+    --filters "Name=tag:Name,Values=${VPC_TGW_ATT_NAME}" "Name=state,Values=available" \
     --query "TransitGatewayVpcAttachments[].TransitGatewayAttachmentId" \
     --output text \
     --region ${AWS_REGION}) && echo ${VPC_TGW_ATT_ID}
