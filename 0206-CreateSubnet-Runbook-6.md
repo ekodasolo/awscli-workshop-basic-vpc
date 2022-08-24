@@ -131,7 +131,9 @@ aws ec2 describe-subnets \
 
 結果の例
 ```output
-(出力無し)
+{
+    "Subnets": []
+}
 ```
 
 ### 2. 主処理
