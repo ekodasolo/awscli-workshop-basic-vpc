@@ -131,7 +131,9 @@ aws ec2 describe-subnets \
 
 結果の例
 ```output
-(出力無し)
+{
+    "Subnets": []
+}
 ```
 
 ### 2. 主処理
@@ -256,6 +258,6 @@ aws ec2 describe-subnets \
 
 #### Navigation
 
-Next: [Subnetを作成する-5 Transit Subnet](./0205-CreateSubnet-Runbook-5.md)
+Next: [Subnetを作成する-5 Public Subnet](./0205-CreateSubnet-Runbook-5.md)
 
 # EOD

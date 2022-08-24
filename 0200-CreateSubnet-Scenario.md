@@ -45,10 +45,10 @@
 ## 詳細手順
 
 1. [Subnetを作成する-1 Private Subnet](./0201-CreateSubnet-Runbook-1.md)
-1. [Subnetを作成する-2 Private Subnet](./0202-CreateSubnet-Runbook-2.md)
-1. [Subnetを作成する-3 Public Subnet](./0203-CreateSubnet-Runbook-3.md)
-1. [Subnetを作成する-4 Public Subnet](./0204-CreateSubnet-Runbook-4.md)
-1. [Subnetを作成する-5 Transit Subnet](./0205-CreateSubnet-Runbook-5.md)
+1. [Subnetを作成する-2 Public Subnet](./0202-CreateSubnet-Runbook-2.md)
+1. [Subnetを作成する-3 Transit Subnet](./0203-CreateSubnet-Runbook-3.md)
+1. [Subnetを作成する-4 Private Subnet](./0204-CreateSubnet-Runbook-4.md)
+1. [Subnetを作成する-5 Public Subnet](./0205-CreateSubnet-Runbook-5.md)
 1. [Subnetを作成する-6 Transit Subnet](./0206-CreateSubnet-Runbook-6.md)
 
 
